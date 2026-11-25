@@ -193,7 +193,7 @@ See [DEPLOYMENT.md](../operations/DEPLOYMENT.md).
 
 1. **Design doc first** in `docs/modules/` using the template sections: Status · Decisions · Data · API · Screens · Rules · Tests · Not done / follow-ups.
 2. Owner signs off decisions (table `D1…Dn` with date).
-3. Branch `feature/<module>-<short>`; commits `TYPE(Module): summary`.
+3. Branch `feature/<module>-<short>` off `feature/integration`; commits `TYPE(Module): summary`; PR back into `feature/integration`. Promotion rounds → `develop` → `staging` → `main` per [BRANCHING.md](../operations/BRANCHING.md).
 4. Backend: entity + migration → service + validator → controller → tests.
 5. Frontend: api module → Pinia store → views → Vitest.
 6. Update the module doc **Status** line, add a dated entry to MODULE-STATUS.md.
