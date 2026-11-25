@@ -1,0 +1,33 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+appsettings.*.local.json
+
+# Node / Vite
+node_modules/
+dist/
+.env.local
+.env.*.local
+coverage/
+playwright-report/
+test-results/
+
+# Capacitor / Android
+TTrack.Mobile/android/app/build/
+*.keystore
+*.jks
+
+# Database backups
+*.bak
+
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
