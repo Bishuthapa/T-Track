@@ -31,6 +31,16 @@
 Oracle Cloud **Always Free** ARM VM (Ampere A1, up to 4 cores / 24 GB) + Docker + **PostgreSQL** (SQL Server has no ARM64 build). Needs a card for identity check at sign-up; no charge on Always Free resources.
 Move cost kept low by CONVENTIONS Rule 13 (portable SQL). Steps: swap `UseSqlServer` → `UseNpgsql`, regenerate migrations, port views, Hangfire → `Hangfire.PostgreSql`, export/import data via the JSON backup (IMPORT-EXPORT D7).
 
+## Tiers on the home PC (match the branches — [BRANCHING.md](BRANCHING.md))
+
+| Tier | Branch | Runs as | Database | Address |
+|---|---|---|---|---|
+| Dev | `develop` (and work branches) | `dotnet run` + `npm run dev` | `TTrack_Dev` | localhost only |
+| UAT | `staging` | Windows service `TTrack-Staging` | `TTrack_Staging` (restored from last prod backup) | `tailscale serve` port 8081 |
+| Prod | `main` (tagged) | Windows service `TTrack` | `TTrack` | `https://<pc>.<tailnet>.ts.net` |
+
+`scripts/deploy.ps1 -Tier staging|prod` (built in Phase 0): checks out the tier's branch into its own folder, publishes, applies the idempotent migration script to that tier's DB, restarts that tier's service.
+
 ## Update procedure (Stage 1)
 1. `git pull` on the PC, `dotnet publish -c Release`.
 2. Back up the DB.
