@@ -64,6 +64,14 @@ Modules: `Auth`, `Household`, `Accounts`, `Transactions`, `Categories`, `Budgets
 
 **Golden rule:** if it cannot appear in a release note, rewrite the message.
 
+## Branches
+
+Same system as BISage — full rules in [docs/operations/BRANCHING.md](docs/operations/BRANCHING.md):
+
+`feature/*` · `fix/*` · `chore/*` · `doc/*` · `claude/*` → **`feature/integration`** → (review round, LEAN or FULL) → **`develop`** → **`staging`** (UAT) → **`main`** (production, tagged `vX.Y.Z`). `hotfix/*` off `main`, merged back down.
+
+Never commit directly to `develop`, `staging` or `main`. Start new work from `feature/integration`.
+
 ## Current phase
 
 **Phase 0 — Foundation** (not started; all owner decisions answered 2026-11-25 — see [docs/tasks/OPEN-DECISIONS.md](docs/tasks/OPEN-DECISIONS.md)). See [BUILD-PLAN.md §Phase 0](docs/architecture/BUILD-PLAN.md#phase-0--foundation).

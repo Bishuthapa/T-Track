@@ -26,6 +26,6 @@ Never scope by technique (`db`, `ci`, `e2e`) or code identifier.
 - `FIX(Transactions): Editing an old expense now updates later running balances`
 - `CHORE(Platform): Pin FluentAssertions below 8.0`
 
-**Branches:** `feature/<module>-<short>`, `fix/<module>-<short>`. `main` always deployable.
+**Branches:** see [BRANCHING.md](BRANCHING.md) — work branches → `feature/integration` → `develop` → `staging` → `main` (same as BISage).
 
 **Golden rule:** if it cannot appear directly in a release note, rewrite the message.
