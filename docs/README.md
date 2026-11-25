@@ -33,6 +33,7 @@ Engineering docs grouped by **document type**, same layout as BISage. Start with
 
 ## operations/
 - [COMMIT-CONVENTION.md](operations/COMMIT-CONVENTION.md)
+- [BRANCHING.md](operations/BRANCHING.md) — feature → feature/integration → develop → staging → main, review rounds, hotfixes
 - [DEPLOYMENT.md](operations/DEPLOYMENT.md)
 
 ## quality/
